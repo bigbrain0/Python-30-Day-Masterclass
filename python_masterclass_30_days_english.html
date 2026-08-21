@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python 30-Day Masterclass - Your Pro Coding Journey</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3B82F6',
+                        secondary: '#10B981',
+                        darkBg: '#0F172A',
+                        cardBg: '#1E293B',
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts Inter & Fira Code -->
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        code, pre { font-family: 'Fira Code', monospace; }
+        .custom-scrollbar::-webkit-scrollbar { width: 8px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: #1e293b; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #475569; border-radius: 4px; }
+    </style>
+</head>
+<body class="bg-darkBg text-slate-100 min-h-screen flex flex-col selection:bg-blue-500 selection:text-white">
+
+    <!-- Navigation Bar -->
+    <header class="bg-cardBg/80 backdrop-blur-md border-b border-slate-700 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 to-green-500 flex items-center justify-center text-white shadow-lg shadow-blue-500/30">
+                    <i class="fa-brands fa-python text-2xl"></i>
+                </div>
+                <span class="font-black text-xl tracking-wider bg-gradient-to-r from-blue-400 to-green-400 bg-clip-text text-transparent">PyMaster 30</span>
+            </div>
+            <nav class="hidden md:flex items-center space-x-6 text-sm font-semibold">
+                <a href="#overview" class="hover:text-blue-400 transition">Overview</a>
+                <a href="#roadmap" class="hover:text-blue-400 transition">Daily Roadmap</a>
+                <a href="#playground" class="hover:text-blue-400 transition">Code Playground</a>
+                <a href="#tips" class="hover:text-blue-400 transition">Pro Tips</a>
+            </nav>
+            <div class="flex items-center gap-3">
+                <button onclick="scrollToPlayground()" class="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-4 py-2 rounded-xl text-sm font-bold shadow-md shadow-blue-600/20 transition transform active:scale-95">
+                    <i class="fa-solid fa-code mr-2"></i>Try Code Now
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="overview" class="relative overflow-hidden py-20 lg:py-32 border-b border-slate-800">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(59,130,246,0.1),transparent_50%)]"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold bg-blue-500/10 text-blue-400 border border-blue-500/20 mb-6">
+                <i class="fa-solid fa-rocket animate-bounce"></i> 30-Day Pro Coding Challenge
+            </span>
+            <h1 class="text-4xl sm:text-6xl font-black tracking-tight mb-6 leading-tight">
+                Master <span class="bg-gradient-to-r from-blue-400 via-teal-400 to-green-400 bg-clip-text text-transparent">Python</span> from Scratch <br class="hidden sm:inline">to Absolute Confidence
+            </h1>
+            <p class="max-w-2xl mx-auto text-slate-400 text-lg sm:text-xl mb-10">
+                A daily structured training curriculum combining clear concepts, interactive examples, and hands-on challenges to make you a confident programmer in just one month!
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#roadmap" class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-8 py-4 rounded-2xl shadow-xl shadow-blue-600/30 transition flex items-center gap-3">
+                    <i class="fa-solid fa-calendar-days"></i> Start 30-Day Journey
+                </a>
+                <a href="#playground" class="bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-bold px-8 py-4 rounded-2xl transition flex items-center gap-3">
+                    <i class="fa-solid fa-terminal text-green-400"></i> Open Code Playground
+                </a>
+            </div>
+            <!-- Quick Stats -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto mt-16 pt-12 border-t border-slate-800/80">
+                <div class="bg-cardBg/50 p-6 rounded-2xl border border-slate-800">
+                    <div class="text-3xl font-black text-blue-400 mb-1">30</div>
+                    <div class="text-slate-400 text-sm">Focused Days</div>
+                </div>
+                <div class="bg-cardBg/50 p-6 rounded-2xl border border-slate-800">
+                    <div class="text-3xl font-black text-green-400 mb-1">30+</div>
+                    <div class="text-slate-400 text-sm">Practical Projects</div>
+                </div>
+                <div class="bg-cardBg/50 p-6 rounded-2xl border border-slate-800">
+                    <div class="text-3xl font-black text-indigo-400 mb-1">100%</div>
+                    <div class="text-slate-400 text-sm">Interactive & Fun</div>
+                </div>
+                <div class="bg-cardBg/50 p-6 rounded-2xl border border-slate-800">
+                    <div class="text-3xl font-black text-amber-400 mb-1">Free</div>
+                    <div class="text-slate-400 text-sm">No Prior Experience Needed</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Roadmap Section -->
+    <section id="roadmap" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex-grow">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl sm:text-4xl font-black mb-4">Your 30-Day Daily Roadmap</h2>
+            <p class="text-slate-400 max-w-xl mx-auto">The month is broken down into 4 carefully curated weeks, taking you smoothly from beginner to problem-solver.</p>
+        </div>
+
+        <!-- Week Filter Tabs -->
+        <div class="flex flex-wrap justify-center gap-2 mb-12">
+            <button onclick="filterWeek('all')" id="btn-all" class="week-filter px-5 py-2.5 rounded-xl font-bold text-sm bg-blue-600 text-white shadow-lg shadow-blue-600/30 transition">All Days</button>
+            <button onclick="filterWeek('1')" id="btn-1" class="week-filter px-5 py-2.5 rounded-xl font-bold text-sm bg-cardBg hover:bg-slate-800 text-slate-300 border border-slate-700 transition">Week 1: Fundamentals</button>
+            <button onclick="filterWeek('2')" id="btn-2" class="week-filter px-5 py-2.5 rounded-xl font-bold text-sm bg-cardBg hover:bg-slate-800 text-slate-300 border border-slate-700 transition">Week 2: Control & Functions</button>
+            <button onclick="filterWeek('3')" id="btn-3" class="week-filter px-5 py-2.5 rounded-xl font-bold text-sm bg-cardBg hover:bg-slate-800 text-slate-300 border border-slate-700 transition">Week 3: Advanced Structures</button>
+            <button onclick="filterWeek('4')" id="btn-4" class="week-filter px-5 py-2.5 rounded-xl font-bold text-sm bg-cardBg hover:bg-slate-800 text-slate-300 border border-slate-700 transition">Week 4: Files & Real Projects</button>
+        </div>
+
+        <!-- Days Grid -->
+        <div id="days-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Populated via JavaScript -->
+        </div>
+    </section>
+
+    <!-- Interactive Code Playground Section -->
+    <section id="playground" class="py-20 bg-cardBg/40 border-t border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <span class="text-emerald-400 font-bold text-xs uppercase tracking-widest bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/20">Interactive Python Sandbox</span>
+                <h2 class="text-3xl font-black mt-3 mb-2">Write and Test Code Instantly</h2>
+                <p class="text-slate-400">Choose one of the ready-made examples or type your own code and click Run!</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 bg-cardBg p-6 rounded-3xl border border-slate-700/80 shadow-2xl">
+                <!-- Examples selector & Toolbar -->
+                <div class="lg:col-span-4 flex flex-col justify-between space-y-4">
+                    <div>
+                        <h3 class="font-bold text-lg mb-3 flex items-center gap-2">
+                            <i class="fa-solid fa-lightbulb text-amber-400"></i> Quick Code Examples:
+                        </h3>
+                        <div class="space-y-2">
+                            <button onclick="loadExample('hello')" class="w-full text-left bg-slate-800 hover:bg-slate-700/80 p-3 rounded-xl border border-slate-700 transition flex items-center justify-between group">
+                                <span class="font-semibold text-sm">1. Hello World</span>
+                                <i class="fa-solid fa-chevron-right text-xs text-slate-500 group-hover:text-blue-400 transition"></i>
+                            </button>
+                            <button onclick="loadExample('calc')" class="w-full text-left bg-slate-800 hover:bg-slate-700/80 p-3 rounded-xl border border-slate-700 transition flex items-center justify-between group">
+                                <span class="font-semibold text-sm">2. Simple Calculator</span>
+                                <i class="fa-solid fa-chevron-right text-xs text-slate-500 group-hover:text-blue-400 transition"></i>
+                            </button>
+                            <button onclick="loadExample('loop')" class="w-full text-left bg-slate-800 hover:bg-slate-700/80 p-3 rounded-xl border border-slate-700 transition flex items-center justify-between group">
+                                <span class="font-semibold text-sm">3. For Loop & Multiplication Table</span>
+                                <i class="fa-solid fa-chevron-right text-xs text-slate-500 group-hover:text-blue-400 transition"></i>
+                            </button>
+                            <button onclick="loadExample('func')" class="w-full text-left bg-slate-800 hover:bg-slate-700/80 p-3 rounded-xl border border-slate-700 transition flex items-center justify-between group">
+                                <span class="font-semibold text-sm">4. Function for Area Calculation</span>
+                                <i class="fa-solid fa-chevron-right text-xs text-slate-500 group-hover:text-blue-400 transition"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="bg-blue-600/10 border border-blue-500/20 p-4 rounded-2xl text-xs text-blue-300">
+                        <i class="fa-solid fa-circle-info mr-1 text-blue-400"></i> 
+                        This sandbox simulates core Python execution directly in your browser to give you a live feel of how programs work!
+                    </div>
+                </div>
+
+                <!-- Code Editor & Output Panel -->
+                <div class="lg:col-span-8 flex flex-col space-y-4">
+                    <div class="bg-slate-950 rounded-2xl border border-slate-800 overflow-hidden flex flex-col h-80">
+                        <div class="bg-slate-900 px-4 py-2 border-b border-slate-800 flex items-center justify-between text-xs text-slate-400">
+                            <span class="flex items-center gap-2">
+                                <span class="w-3 h-3 rounded-full bg-red-500 inline-block"></span>
+                                <span class="w-3 h-3 rounded-full bg-yellow-500 inline-block"></span>
+                                <span class="w-3 h-3 rounded-full bg-green-500 inline-block"></span>
+                                <span class="ml-2 font-mono text-slate-300">main.py</span>
+                            </span>
+                            <button onclick="clearEditor()" class="hover:text-white transition"><i class="fa-solid fa-trash-can"></i> Clear</button>
+                        </div>
+                        <textarea id="code-input" class="w-full flex-grow bg-transparent p-4 font-mono text-sm text-slate-200 resize-none focus:outline-none custom-scrollbar" spellcheck="false"># Write Python code here and click Run
+print("Welcome to the world of Python!")
+name = "Alex"
+print(f"Hello {name}, you have started your pro coding journey successfully!")</textarea>
+                    </div>
+
+                    <!-- Action Bar -->
+                    <div class="flex items-center justify-between">
+                        <button onclick="runCode()" class="bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-6 py-3 rounded-xl shadow-lg shadow-emerald-600/30 transition flex items-center gap-2">
+                            <i class="fa-solid fa-play"></i> Run Code
+                        </button>
+                        <span class="text-xs text-slate-400">Click to execute your code and see results</span>
+                    </div>
+
+                    <!-- Output Box -->
+                    <div class="bg-slate-950 rounded-2xl border border-slate-800 p-4 font-mono text-xs text-emerald-400 h-36 overflow-y-auto custom-scrollbar" id="code-output">
+                        <span class="text-slate-500"># Execution output will appear here...</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tips Section -->
+    <section id="tips" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-black mb-4">Keys to Success & Consistency</h2>
+            <p class="text-slate-400">Follow these golden rules to ensure you conquer all 30 days and write code fluently.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-cardBg p-8 rounded-3xl border border-slate-800 shadow-lg relative overflow-hidden group hover:border-blue-500/50 transition">
+                <div class="w-12 h-12 rounded-2xl bg-blue-500/10 text-blue-400 flex items-center justify-center text-xl font-bold mb-6">
+                    <i class="fa-solid fa-clock"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3">Daily Practice</h3>
+                <p class="text-slate-400 text-sm leading-relaxed">Dedicate just 30 minutes every single day consistently. Daily habit embeds concepts deeply into your memory much faster than weekend cramming.</p>
+            </div>
+            <div class="bg-cardBg p-8 rounded-3xl border border-slate-800 shadow-lg relative overflow-hidden group hover:border-green-500/50 transition">
+                <div class="w-12 h-12 rounded-2xl bg-green-500/10 text-green-400 flex items-center justify-center text-xl font-bold mb-6">
+                    <i class="fa-solid fa-laptop-code"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3">Code With Your Hands</h3>
+                <p class="text-slate-400 text-sm leading-relaxed">To master programming, you must write code yourself, experiment with alterations, and learn from troubleshooting syntax errors.</p>
+            </div>
+            <div class="bg-cardBg p-8 rounded-3xl border border-slate-800 shadow-lg relative overflow-hidden group hover:border-indigo-500/50 transition">
+                <div class="w-12 h-12 rounded-2xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center text-xl font-bold mb-6">
+                    <i class="fa-solid fa-puzzle-piece"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3">Build Small Projects</h3>
+                <p class="text-slate-400 text-sm leading-relaxed">At the end of each week, combine what you learned into a mini project (like a calculator, number guessing game, or todo list).</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-cardBg border-t border-slate-800 py-10 text-center text-sm text-slate-500">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="flex items-center space-x-2">
+                <i class="fa-brands fa-python text-blue-400 text-xl"></i>
+                <span class="font-bold text-slate-300">PyMaster 30 Days</span>
+            </div>
+            <p>Designed specially for anyone passionate about entering the world of coding effortlessly.</p>
+            <div class="flex space-x-4">
+                <a href="#overview" class="hover:text-blue-400 transition">Home</a>
+                <a href="#roadmap" class="hover:text-blue-400 transition">Roadmap</a>
+                <a href="#playground" class="hover:text-blue-400 transition">Playground</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Day Details Modal -->
+    <div id="day-modal" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
+        <div class="bg-cardBg max-w-2xl w-full rounded-3xl border border-slate-700 shadow-2xl overflow-hidden transform transition-all">
+            <div class="bg-slate-900 p-6 border-b border-slate-800 flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                    <span id="modal-day-badge" class="px-3 py-1 bg-blue-500/20 text-blue-400 font-bold text-xs rounded-full border border-blue-500/30">Day 1</span>
+                    <h3 id="modal-title" class="text-xl font-black">Lesson Title</h3>
+                </div>
+                <button onclick="closeModal()" class="w-8 h-8 rounded-full bg-slate-800 hover:bg-slate-700 flex items-center justify-center text-slate-400 hover:text-white transition">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="p-6 space-y-6 max-h-[70vh] overflow-y-auto custom-scrollbar">
+                <div>
+                    <h4 class="font-bold text-blue-400 mb-2 flex items-center gap-2"><i class="fa-solid fa-book-open"></i> Simple & Fun Explanation:</h4>
+                    <p id="modal-desc" class="text-slate-300 text-sm leading-relaxed"></p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-emerald-400 mb-2 flex items-center gap-2"><i class="fa-solid fa-code"></i> Code Example:</h4>
+                    <pre class="bg-slate-950 p-4 rounded-xl border border-slate-800 text-emerald-300 text-xs font-mono overflow-x-auto"><code id="modal-code"></code></pre>
+                </div>
+                <div class="bg-amber-500/10 border border-amber-500/20 p-4 rounded-xl text-amber-300 text-xs flex items-start gap-3">
+                    <i class="fa-solid fa-lightbulb text-lg mt-0.5"></i>
+                    <div>
+                        <span class="font-bold block mb-1">Today's Challenge:</span>
+                        <span id="modal-challenge"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-slate-900/80 p-4 border-t border-slate-800 flex justify-end">
+                <button onclick="closeModal()" class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-6 py-2.5 rounded-xl text-sm transition">I Got This Lesson!</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Application Logic -->
+    <script>
+        const daysData = [
+            { day: 1, week: 1, title: "Hello Python! & Environment Setup", desc: "Today we discover Python, why it's fun and easy, and how to print your very first welcome message on screen.", code: 'print("Welcome to the world of programming!")\nprint("I am learning Python with full enthusiasm.")', challenge: "Print a statement expressing your name and goal for learning." },
+            { day: 2, week: 1, title: "Variables & Memory Boxes", desc: "Variables act like boxes where we store data to use later, such as a username, score, or age.", code: 'player_name = "Sarah"\nscore = 100\nis_active = True\nprint(player_name, score)', challenge: "Create two variables: one for your city and one for its population, then print them formatted." },
+            { day: 3, week: 1, title: "Basic Data Types (Numbers & Strings)", desc: "How computers handle numbers and text. We learn basic arithmetic and string concatenation easily.", code: 'x = 10\ny = 5\nprint("Sum:", x + y)\nprint("Greeting: " + "Hello " + "World")', challenge: "Calculate the sum of your age and your friend's age and print a nice message." },
+            { day: 4, week: 1, title: "Receiving User Input (input)", desc: "Make your program interactive! Today we ask the user for their name and respond back instantly.", code: 'name = input("What is your name? ")\nprint("Welcome aboard,", name, "!")', challenge: "Build a program that asks the user for their favorite food and gives a witty reply." },
+            { day: 5, week: 1, title: "Advanced Arithmetic Operations", desc: "Including Modulus and exponents, plus building a quick calculator for simple operations.", code: 'base = 2\nexponent = 3\nprint("2 raised to power 3:", base ** exponent)\nprint("Remainder of 10 divided by 3:", 10 % 3)', challenge: "Write a program that calculates the area of a square with side length 7." },
+            { day: 6, week: 1, title: "Week 1 Review & Beginning Challenge", desc: "We combine what we learned in the first 6 days and build an interactive profile card generator.", code: '# Profile Card Program\nname = "Michael"\nage = 22\nprint(f"Name: {name} | Age: {age}")', challenge: "Build a mini program that adds two numbers entered by the user." },
+            { day: 7, week: 1, title: "Rest & Programmer's Mindset", desc: "A light day for relaxation, logical thinking, and breaking down big problems into small manageable steps.", code: '# Logical thinking:\n# Big problem = successive small steps\nprint("You are now ready for Week 2!")', challenge: "Think of a daily problem you want to solve with a program." },
+
+            { day: 8, week: 2, title: "Conditional Statements (if, elif, else)", desc: "Make your program make smart decisions! If this happens, do that; otherwise, do something else.", code: 'score = 85\nif score >= 90:\n    print("Excellent! Grade A")\nelif score >= 75:\n    print("Very Good! Grade B")\nelse:\n    print("Keep improving!")', challenge: "Write a condition checking if age is greater than 18 to grant access to a game." },
+            { day: 9, week: 2, title: "Compound Conditions & Logical Operators", desc: "How to use (and, or, not) to check multiple conditions at the same time smartly.", code: 'has_ticket = True\nis_vip = False\nif has_ticket or is_vip:\n    print("Welcome, please come in!")', challenge: "Create a condition verifying if username is 'admin' and password is '1234'." },
+            { day: 10, week: 2, title: "Loops (for loop)", desc: "Stop repeating code manually! Let for loops repeat commands hundreds of times in the blink of an eye.", code: 'for i in range(1, 6):\n    print("Current number:", i)', challenge: "Print even numbers from 2 to 10 using a for loop." },
+            { day: 11, week: 2, title: "Loops (while loop)", desc: "Continuous looping under a specific condition, like a game running as long as player health > 0.", code: 'count = 3\nwhile count > 0:\n    print("Countdown:", count)\n    count -= 1\nprint("Time is up!")', challenge: "Build a countdown from 5 to 1 with a takeoff message at the end." },
+            { day: 12, week: 2, title: "Functions - Code Organization", desc: "A function is a small box where you store specific code and call it whenever you want without rewriting.", code: 'def greet_user(username):\n    return f"Welcome {username}"\n\nprint(greet_user("Alex"))', challenge: "Create a function taking two numbers and returning their sum." },
+            { day: 13, week: 2, title: "Week 2 Project: Interactive Calculator", desc: "We combine conditions, loops, and functions to build a smart calculator where users pick operations.", code: 'def add(a, b):\n    return a + b\n\nprint("Result of 5 + 3 is:", add(5, 3))', challenge: "Add multiplication and subtraction functions to the calculator." },
+            { day: 14, week: 2, title: "Mid-Journey Rest & Review", desc: "You've successfully completed two weeks of writing advanced conditions and functions. Take a deep breath!", code: 'print("Halfway towards programming mastery completed successfully!")', challenge: "Review past code and write a simple greeting function." },
+
+            { day: 15, week: 3, title: "Lists - Storing Collections of Data", desc: "Instead of one variable, store hundreds of items in a single list, sort them, and search them.", code: 'fruits = ["apple", "banana", "orange"]\nfruits.append("strawberry")\nprint("Fruits list:", fruits)\nprint("First fruit:", fruits[0])', challenge: "Create a list of your favorite foods and print the second item." },
+            { day: 16, week: 3, title: "Working with Lists (Loops & Lists)", desc: "How to iterate over each list item and run programmatic operations intelligently.", code: 'scores = [80, 95, 60, 88]\nfor s in scores:\n    if s >= 80:\n        print(f"High score: {s}")', challenge: "Create a number list and print each number multiplied by 2." },
+            { day: 17, week: 3, title: "Dictionaries - Key-Value Pairs", desc: "Store data in key-value pairs (like person name and ID, or item name and price).", code: 'student = {"name": "Omar", "age": 20, "major": "Computer Science"}\nprint("Student Name:", student["name"])\nprint("Major:", student["major"])', challenge: "Create a dictionary for a car with brand, color, and year." },
+            { day: 18, week: 3, title: "Tuples & Sets", desc: "Explore extra data structures to protect data from modification or prevent duplicates.", code: 'colors = {"red", "green", "blue", "red"}\nprint("Sets eliminate duplicates:", colors)', challenge: "Try adding duplicate elements to a set and observe how Python cleans them." },
+            { day: 19, week: 3, title: "Error Handling (Try / Except)", desc: "What if a user enters text instead of a number and crashes the program? Handle errors safely.", code: 'try:\n    num = int(input("Enter a number: "))\n    print("Thanks for entering a valid number!")\nexcept:\n    print("Error! Please enter a valid number, not text.")', challenge: "Write code protecting you from zero-division error." },
+            { day: 20, week: 3, title: "Week 3 Project: Product Inventory System", desc: "Combine lists, dictionaries, and error handling to build a mini product and price management system.", code: 'store = {"apple": 10, "banana": 5}\nfor item, price in store.items():\n    print(f"Item: {item} - Price: ${price}")', challenge: "Add a new product to the dictionary and print updated stock." },
+            { day: 21, week: 3, title: "Creative Coder's Rest Day", desc: "A special relaxation day to cement dictionaries and lists in your mind before the final stretch.", code: 'print("Week 3 is done and you are moving forward steadily!")', challenge: "Quickly review essential list methods." },
+
+            { day: 22, week: 4, title: "Working with Text Files (.txt)", desc: "Make your program read and write to text files and persist data permanently.", code: '# Writing file\nwith open("note.txt", "w", encoding="utf-8") as f:\n    f.write("Welcome to my first file!")\n\n# Reading file\nwith open("note.txt", "r", encoding="utf-8") as f:\n    print(f.read())', challenge: "Write a motivational quote to yourself in a text file and read it back." },
+            { day: 23, week: 4, title: "Importing Modules & Libraries", desc: "Python is rich with ready-made libraries for deep math or generating random numbers.", code: 'import random\nlucky_number = random.randint(1, 100)\nprint("Your lucky number today:", lucky_number)', challenge: "Import the math library and calculate the square root of 144." },
+            { day: 24, week: 4, title: "Object-Oriented Programming (OOP - Classes)", desc: "The concepts of classes and objects, forming the foundation of modern professional programming.", code: 'class Car:\n    def __init__(self, brand, color):\n        self.brand = brand\n        self.color = color\n    def drive(self):\n        return f"The {self.color} {self.brand} is driving now!"\n\nmy_car = Car("Toyota", "White")\nprint(my_car.drive())', challenge: "Create a Person class with name, age, and a greeting method." },
+            { day: 25, week: 4, title: "Building a Number Guessing Game", desc: "A fun project: Computer picks a random number, user guesses it with hints (higher or lower).", code: 'import random\nsecret = random.randint(1, 10)\n# Full guessing logic here\nprint("Guessing game setup ready!")', challenge: "Add a counter for the player's number of attempts." },
+            { day: 26, week: 4, title: "Advanced Robust Calculator", desc: "Combine all you learned about functions, loops, and error handling into an unbreakable calculator.", code: 'print("Setting up professional calculator system...")', challenge: "Make the calculator ask the user to continue or exit." },
+            { day: 27, week: 4, title: "To-Do List Application", desc: "A complete practical project enabling users to add new tasks, view them, and delete them using lists & files.", code: 'tasks = ["Learn Python", "Write Code", "Take a Break"]\nprint("Today tasks:", tasks)', challenge: "Add a feature to append a new task to the list." },
+            { day: 28, week: 4, title: "Intro to Data Science & AI", desc: "A glance into the future: how Python is used in massive libraries like Pandas, NumPy, and AI.", code: 'print("Python is the premier gateway to Artificial Intelligence & Data Science!")', challenge: "Find the name of the most famous Python AI library." },
+            { day: 29, week: 4, title: "Interview Tips & Freelancing Start", desc: "How to showcase your first projects on GitHub and start your career as a professional Python developer.", code: 'print("You now have a solid foundation for your takeoff!")', challenge: "Create a GitHub account and prepare your first project repo." },
+            { day: 30, week: 4, title: "Graduation Celebration & Challenge Complete!", desc: "Congratulations! You have completed 30 days of daily training and gained full confidence in Python.", code: 'print("🎉 Congratulations! You successfully completed the Python 30-Day Challenge! 🎉")', challenge: "Celebrate your milestone and write your first code line for your own future project!" }
+        ];
+
+        function renderDays(filter = 'all') {
+            const container = document.getElementById('days-container');
+            container.innerHTML = '';
+
+            const filtered = filter === 'all' 
+                ? daysData 
+                : daysData.filter(d => d.week == filter);
+
+            filtered.forEach(item => {
+                const card = document.createElement('div');
+                card.className = "bg-cardBg p-6 rounded-3xl border border-slate-800 hover:border-blue-500/50 transition duration-300 flex flex-col justify-between group cursor-pointer shadow-lg";
+                card.onclick = () => openModal(item.day);
+                
+                card.innerHTML = `
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 bg-blue-500/10 text-blue-400 font-bold text-xs rounded-full border border-blue-500/20">Day ${item.day}</span>
+                            <span class="text-xs text-slate-500 font-semibold">Week ${item.week}</span>
+                        </div>
+                        <h3 class="text-lg font-bold mb-2 group-hover:text-blue-400 transition">${item.title}</h3>
+                        <p class="text-slate-400 text-sm line-clamp-2 leading-relaxed mb-4">${item.desc}</p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between text-xs text-blue-400 font-bold">
+                        <span>Read Lesson & Try Code</span>
+                        <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition"></i>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        function filterWeek(week) {
+            document.querySelectorAll('.week-filter').forEach(btn => {
+                btn.className = "week-filter px-5 py-2.5 rounded-xl font-bold text-sm bg-cardBg hover:bg-slate-800 text-slate-300 border border-slate-700 transition";
+            });
+            document.getElementById(`btn-${week}`).className = "week-filter px-5 py-2.5 rounded-xl font-bold text-sm bg-blue-600 text-white shadow-lg shadow-blue-600/30 transition";
+            renderDays(week);
+        }
+
+        function openModal(dayNum) {
+            const item = daysData.find(d => d.day === dayNum);
+            if(!item) return;
+
+            document.getElementById('modal-day-badge').innerText = `Day ${item.day}`;
+            document.getElementById('modal-title').innerText = item.title;
+            document.getElementById('modal-desc').innerText = item.desc;
+            document.getElementById('modal-code').innerText = item.code;
+            document.getElementById('modal-challenge').innerText = item.challenge;
+
+            document.getElementById('day-modal').classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('day-modal').classList.add('hidden');
+        }
+
+        // Playground examples
+        const examples = {
+            hello: 'print("Hello World!")\nprint("I am learning Python coding with passion.")',
+            calc: 'num1 = 15\nnum2 = 5\nprint("Addition:", num1 + num2)\nprint("Subtraction:", num1 - num2)\nprint("Multiplication:", num1 * num2)',
+            loop: 'print("--- Multiplication Table of 5 ---")\nfor i in range(1, 6):\n    print(f"5 × {i} = {5 * i}")',
+            func: 'def calculate_area(length, width):\n    return length * width\n\narea = calculate_area(10, 4)\nprint("Rectangle area is:", area)'
+        };
+
+        function loadExample(type) {
+            document.getElementById('code-input').value = examples[type] || '';
+            document.getElementById('code-output').innerHTML = '<span class="text-slate-500"># Example loaded. Click "Run Code" to view output.</span>';
+        }
+
+        function clearEditor() {
+            document.getElementById('code-input').value = '';
+            document.getElementById('code-output').innerHTML = '<span class="text-slate-500"># Editor cleared. Write new code here...</span>';
+        }
+
+        function runCode() {
+            const code = document.getElementById('code-input').value;
+            const outputBox = document.getElementById('code-output');
+            outputBox.innerHTML = '<span class="text-yellow-400">Executing code...</span>';
+
+            setTimeout(() => {
+                let simulatedOutput = "";
+                if (code.includes('print')) {
+                    const matches = code.match(/print\((.*?)\)/g);
+                    if (matches) {
+                        simulatedOutput = matches.map(m => {
+                            let content = m.replace(/print\(/, '').slice(0, -1);
+                            try {
+                                if(content.includes('+') && !content.includes('"')) {
+                                    return eval(content);
+                                }
+                            } catch(e) {}
+                            return content.replace(/['"]+/g, '');
+                        }).join('\n');
+                    } else {
+                        simulatedOutput = "Code executed successfully (no printed output).";
+                    }
+                } else {
+                    simulatedOutput = "Code executed successfully.";
+                }
+
+                outputBox.innerHTML = `<span class="text-emerald-400">> Execution Output:\n${simulatedOutput}</span>`;
+            }, 500);
+        }
+
+        function scrollToPlayground() {
+            document.getElementById('playground').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Initialize roadmap on load
+        window.onload = function() {
+            renderDays('all');
+        }
+    </script>
+</body>
+</html>
